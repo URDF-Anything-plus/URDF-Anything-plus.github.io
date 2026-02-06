@@ -2,27 +2,6 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-.logo{
-  display: inline-block;
-  width: 100px;  /* adjust as needed */
-  height: 100px;  /* adjust as needed */
-  background-image: url('../../../assets/Figures/emojis/monkey_video.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  vertical-align: middle;
-}
-
-.emoji {
-  font-family: 'Noto Color Emoji', sans-serif;
-}
-
-.small-caps {
-  font-variant: small-caps;
-  font-size: 5rem; /* Increased font size for the title */
-
-}
-
 
 .footer .icon-link {
     font-size: 25px;
