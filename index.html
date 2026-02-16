@@ -94,7 +94,7 @@
             <span class="author-block">
               <a href="https://keunhong.com">Zhuangzhe Wu</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Yue Xin</a><sup>1</sup>,</span>
+              <a href="https://github.com/vinkda">Yue Xin</a><sup>1</sup>,</span>
             <span class="author-block">
               <a href="https://jackhck.github.io/">Chengkai Hou</a><sup>1</sup>,
             </span>
@@ -104,6 +104,7 @@
             <span class="author-block">
               <a href="https://jieyuz2.github.io/">Jieyu Zhang</a><sup>3</sup>,
             </span>
+      
             <span class="author-block">
               <a href="https://scholar.google.com/citations?hl=en&user=voqw10cAAAAJ&view_op=list_works&sortby=pubdate">Shanghang Zhang</a><sup>1</sup>,
             </span>
@@ -151,7 +152,7 @@
               </span> -->
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -296,11 +297,21 @@
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Method. -->
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Method</h2>
         <div class="content has-text-justified">
-          <img src="./static/images/pipeline_animate.gif" alt="Method pipeline animation" style="width: 120%; height: auto; max-width: none; margin-left: -10%;" />
+          <p>
+            URDF-Anything+ is an end-to-end autoregressive framework that generates executable articulated object models from a single RGB image.
+            We first extract global visual features to reconstruct a holistic 3D representation, then sequentially generate parts and joint parameters conditioned on this context.
+          </p>
+          <p>
+            At each step, a diffusion transformer produces a shared latent that encodes both geometry and articulation cues; new parts are merged and re-encoded to keep the context consistent.
+            The process stops when an end token is predicted, yielding a complete URDF model ready for standard physics simulators.
+          </p>
+          <video id="pipeline-video" controls playsinline style="width: 120%; height: auto; max-width: none; margin-left: -10%;margin-top: 1.5rem;">
+            <source src="./static/images/pipeline.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
@@ -312,11 +323,85 @@
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Reconstructions. -->
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Reconstructions</h2>
         <div class="content has-text-justified">
-          <img src="./static/images/reconstruction1.png" alt="Reconstruction results" style="width: 120%; height: auto; max-width: none; margin-left: -10%;" />
+          <h3 class="title is-5" style="margin-top: 1rem;">From Test-Dataset</h3>
+          <img src="./static/images/reconstruction1.png" alt="Reconstruction results" style="width: 120%; height: auto; max-width: none; margin-left: -10%; margin-top: 1.5rem;" />
+          <div class="columns is-vcentered" style="margin-top: 2rem; column-gap: 2rem;">
+            <div class="column is-half">
+              <img src="./static/reconstructions/1029.png" alt="Reconstruction 1029" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+            <div class="column is-half">
+              <img src="./static/reconstructions/1029.gif" alt="Reconstruction 1029 animation" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+          </div>
+          <div class="columns is-vcentered" style="margin-top: 2rem; column-gap: 2rem;">
+            <div class="column is-half">
+              <img src="./static/reconstructions/1974.png" alt="Reconstruction 1274" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+            <div class="column is-half">
+              <img src="./static/reconstructions/1274.gif" alt="Reconstruction 1274 animation" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+          </div>
+          <div class="columns is-vcentered" style="margin-top: 2rem; column-gap: 2rem;">
+            <div class="column is-half">
+              <img src="./static/reconstructions/4094.png" alt="Reconstruction 4094" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+            <div class="column is-half">
+              <img src="./static/reconstructions/4094.gif" alt="Reconstruction 4094 animation" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+          </div>
+          <div class="columns is-vcentered" style="margin-top: 2rem; column-gap: 2rem;">
+            <div class="column is-half">
+              <img src="./static/reconstructions/7238.png" alt="Reconstruction 7238" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+            <div class="column is-half">
+              <img src="./static/reconstructions/7238.gif" alt="Reconstruction 7238 animation" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+          </div>
+          <div class="columns is-vcentered" style="margin-top: 2rem; column-gap: 2rem;">
+            <div class="column is-half">
+              <img src="./static/reconstructions/10279.png" alt="Reconstruction 10279" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+            <div class="column is-half">
+              <img src="./static/reconstructions/10279.gif" alt="Reconstruction 10279 animation" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+          </div>
+          <div class="columns is-vcentered" style="margin-top: 2rem; column-gap: 2rem;">
+            <div class="column is-half">
+              <img src="./static/reconstructions/12345.png" alt="Reconstruction 12345" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+            <div class="column is-half">
+              <img src="./static/reconstructions/12345.gif" alt="Reconstruction 12345 animation" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+          </div>
+          <h3 class="title is-5" style="margin-top: 2.5rem;">In-the-Wild</h3>
+          <div class="columns is-vcentered" style="margin-top: 2rem; column-gap: 2rem;">
+            <div class="column is-half">
+              <img src="./static/reconstructions/display.png" alt="Reconstruction display" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+            <div class="column is-half">
+              <img src="./static/reconstructions/display.gif" alt="Reconstruction display animation" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+          </div>
+          <div class="columns is-vcentered" style="margin-top: 2rem; column-gap: 2rem;">
+            <div class="column is-half">
+              <img src="./static/reconstructions/faucet.png" alt="Reconstruction faucet" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+            <div class="column is-half">
+              <img src="./static/reconstructions/faucet.gif" alt="Reconstruction faucet animation" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+          </div>
+          <div class="columns is-vcentered" style="margin-top: 2rem; column-gap: 2rem;">
+            <div class="column is-half">
+              <img src="./static/reconstructions/laptop.png" alt="Reconstruction laptop" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+            <div class="column is-half">
+              <img src="./static/reconstructions/laptop.gif" alt="Reconstruction laptop animation" style="width: 80%; height: auto; display: block; margin: 0 auto; border-radius: 16px;" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -324,153 +409,93 @@
   </div>
 </section>
 
-
 <section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
+        <div class="container is-max-desktop">
+          <!-- Real-Follow-Sim Experiments. -->
+          <div class="columns is-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Real-Follow-Sim Experiments</h2>
+              <div class="content has-text-justified">
+                <p>
+                  we propose <i><b>Real-Follow-Sim</b></i>, a paradigm that
+                  shifts the primary challenge from policy generalization to
+                  simulation fidelity. We construct a dynamic digital twin
+                  of the real environment by leveraging URDF-Anything+
+                  to stream real-world visual observations into the simulator,
+                  thereby continuously aligning the virtual scene with its phys
+                  ical counterpart in both geometry and appearance. Crucially,
+                  the policy is trained and executed exclusively in simula
+                  tion, operating solely on synthetic data. The real robot acts
+                  merely as a faithful “follower”, executing the actions gener
+                  ated by the simulated agent without any online adaptation.
+                  
+                </p>
+                <p>
+                  Overall, our framework consists of three stages: (1) Digital
+                  Twin Asset Construction; (2) Policy Learning in Simulation;
+                  (3) Real-World Execution via Simulated Trajectories.
+                </p>
+              </div>
+              <div class="content has-text-justified">
+                <img src="./static/images/realsim.png" alt="Real-Follow-Sim experiments" style="width: 100%; height: auto; margin-top: 1.5rem;" />
+                <div class="columns is-vcentered" style="margin-top: 2rem; column-gap: 2rem;">
+                  <div class="column is-half">
+                    <video id="faucet-sim-video" controls playsinline style="width: 95%; height: auto;">
+                      <source src="./static/videos/faucet_sim.mp4" type="video/mp4">
+                    </video>
+                    <script>
+                      document.getElementById('faucet-sim-video').addEventListener('loadedmetadata', function() {
+                        this.currentTime = 1.0; // Start at 1 second to skip the initial static frames
+                      });
+                    </script>
+                  </div>
+                  <div class="column is-half">
+                    <video controls playsinline style="width: 110%; height: auto;">
+                      <source src="./static/videos/faucet.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+                <div class="columns is-vcentered" style="margin-top: 2rem; column-gap: 2rem;">
+                  <div class="column is-half">
+                    <video controls playsinline style="width: 95%; height: auto;">
+                      <source src="./static/videos/microwave_sim.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="column is-half">
+                    <video id="microwave-video" controls playsinline style="width: 110%; height: auto;">
+                      <source src="./static/videos/microwave.mp4" type="video/mp4">
+                    </video>
+                    <script>
+                      document.getElementById('microwave-video').playbackRate = 2.0;
+                    </script>
+                  </div>
+                </div>
+                <div class="columns is-vcentered" style="margin-top: 2rem; column-gap: 2rem;">
+                  <div class="column is-half">
+                    <video controls playsinline style="width: 95%; height: auto;">
+                      <source src="./static/videos/laptop_sim.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="column is-half">
+                    <video controls playsinline style="width: 110%; height: auto;">
+                      <source src="./static/videos/laptop.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              </div>
             </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
           </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
+          <!--/ Real-Follow-Sim Experiments. -->
         </div>
-        <br/>
-        <!--/ Interpolating. -->
+      </section>
 
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
-  </div>
-</section>
 
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
+    <pre><code>bibtex
+</code></pre>
   </div>
 </section>
 
